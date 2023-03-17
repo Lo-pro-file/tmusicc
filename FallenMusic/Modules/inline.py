@@ -61,21 +61,21 @@ async def inline_query_handler(_, query):
                 [
                     [
                         InlineKeyboardButton(
-                            text="• ʏᴏᴜᴛᴜʙᴇ •",
+                            text="❖ ʏᴏᴜᴛᴜʙᴇ ❖",
                             url=link,
                         )
                     ],
                 ]
             )
             searched_text = f"""
-✨ **ᴛɪᴛʟᴇ :** [{title}]({link})
+❣️ **ᴛɪᴛʟᴇ :** [{title}]({link})
 
-⏳ **ᴅᴜʀᴀᴛɪᴏɴ :** `{duration}`ᴍɪɴᴜᴛᴇs
-👀 **ᴠɪᴇᴡs :** `{views}`
-⏰ **ᴩᴜʙʟɪsʜᴇᴅ ᴏɴ :** {published}
-🎥 **ᴄʜᴀɴɴᴇʟ :** [{channel}]({channellink})
+✤ **ᴅᴜʀᴀᴛɪᴏɴ :** `{duration}`ᴍɪɴᴜᴛᴇs
+✤ **ᴠɪᴇᴡs :** `{views}`
+✤ **ᴩᴜʙʟɪsʜᴇᴅ ᴏɴ :** {published}
+✤ **ᴄʜᴀɴɴᴇʟ :** [{channel}]({channellink})
 
-<u>💖 **sᴇᴀʀᴄʜ ᴩᴏᴡᴇʀᴇᴅ ʙʏ {BOT_NAME}**</u>"""
+<u>🌺 **sᴇᴀʀᴄʜ ᴩᴏᴡᴇʀᴇᴅ ʙʏ {BOT_NAME}**</u>"""
             answers.append(
                 InlineQueryResultPhoto(
                     photo_url=thumbnail,
