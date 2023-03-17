@@ -46,14 +46,14 @@ async def ping_fallen(_, message: Message):
     uptime = get_readable_time((upt))
 
     await hmm.edit_text(
-        f"""➻ ᴩᴏɴɢ : `{resp}ᴍs`
+        f"""😂 𝐀ɴɢᴇʟ ✘ 𝐎ᴘ 𝐋𝐎𝐋 🦋 ᴩᴏɴɢ : `{resp}ᴍs`
 
 <b><u>{BOT_NAME} sʏsᴛᴇᴍ sᴛᴀᴛs :</u></b>
 
-๏ **ᴜᴩᴛɪᴍᴇ :** {uptime}
-๏ **ʀᴀᴍ :** {mem}
-๏ **ᴄᴩᴜ :** {cpu}
-๏ **ᴅɪsᴋ :** {disk}""",
+✤ **ᴜᴩᴛɪᴍᴇ :** {uptime}
+✤ **ʀᴀᴍ :** {mem}
+✤ **ᴄᴩᴜ :** {cpu}
+✤ **ᴅɪsᴋ :** {disk}""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
