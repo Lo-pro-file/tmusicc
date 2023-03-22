@@ -69,14 +69,7 @@ async def swr_handler(_, chat_id: int):
 async def on_stream_end(pytgcalls, update: Update):
     chat_id = update.chat_id
 
-    get = fallendb.get(chat_id)
-    if not get:
-        try:
-            await _clear_(chat_id)
-            return await pytgcalls.leave_group_call(chat_id)
-        except:
-            return
-    else:
+    if get := fallendb.get(chat_id):
         process = await app.send_message(
             chat_id=chat_id,
             text="» ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ ɴᴇxᴛ ᴛʀᴀᴄᴋ ғʀᴏᴍ ᴏ̨ᴜᴇᴜᴇ...",
@@ -108,3 +101,9 @@ async def on_stream_end(pytgcalls, update: Update):
             caption=f"**😂 𝐒𝐓𝐀𝐑𝐓𝐄𝐃 𝐀ɴɢᴇʟ ✘ 𝐎ᴘ 𝐋𝐎𝐋 🦋**\n\n✤ **ᴛɪᴛʟᴇ :** [{title[:27]}](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n✤ **ᴅᴜʀᴀᴛɪᴏɴ :** `{duration}` ᴍɪɴᴜᴛᴇs\n✤ **ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ :** {req_by}",
             reply_markup=buttons,
         )
+    else:
+        try:
+            await _clear_(chat_id)
+            return await pytgcalls.leave_group_call(chat_id)
+        except:
+            return

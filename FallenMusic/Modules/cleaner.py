@@ -44,6 +44,6 @@ async def clear_misc(_, message: Message):
         for file in down_dir:
             os.remove(os.path.join(downloads, file))
     if os_dir:
-        for lel in os.listdir(pth):
+        for _ in os.listdir(pth):
             os.system("rm -rf *.webm *.jpg *.png")
     await message.reply_text("» ᴀʟʟ ᴛᴇᴍᴘ ᴅɪʀᴇᴄᴛᴏʀɪᴇs ᴄʟᴇᴀɴᴇᴅ.")

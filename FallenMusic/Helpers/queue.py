@@ -41,8 +41,6 @@ async def put(
         "user_id": user_id,
     }
     get = fallendb.get(chat_id)
-    if get:
-        fallendb[chat_id].append(put_f)
-    else:
+    if not get:
         fallendb[chat_id] = []
-        fallendb[chat_id].append(put_f)
+    fallendb[chat_id].append(put_f)

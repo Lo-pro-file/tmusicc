@@ -53,7 +53,7 @@ async def sys_stats(_, message: Message):
     processor = platform.processor()
     mac_address = ":".join(re.findall("..", "%012x" % uuid.getnode()))
     sp = platform.system()
-    ram = str(round(psutil.virtual_memory().total / (1024.0**3))) + " ɢʙ"
+    ram = f"{str(round(psutil.virtual_memory().total / 1024.0**3))} ɢʙ"
     p_core = psutil.cpu_count(logical=False)
     t_core = psutil.cpu_count(logical=True)
     try:

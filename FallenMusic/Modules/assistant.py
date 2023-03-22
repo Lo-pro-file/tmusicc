@@ -59,8 +59,7 @@ async def set_pfp(_, message: Message):
 
 @app.on_message(filters.command(["assbio", "setbio"]) & SUDOERS)
 async def set_bio(_, message: Message):
-    msg = message.reply_to_message
-    if msg:
+    if msg := message.reply_to_message:
         if msg.text:
             newbio = msg.text
             await app2.update_profile(bio=newbio)
@@ -79,8 +78,7 @@ async def set_bio(_, message: Message):
 
 @app.on_message(filters.command(["assname", "setname"]) & SUDOERS)
 async def set_name(_, message: Message):
-    msg = message.reply_to_message
-    if msg:
+    if msg := message.reply_to_message:
         if msg.text:
             name = msg.text
             await app2.update_profile(first_name=name)

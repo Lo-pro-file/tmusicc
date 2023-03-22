@@ -25,10 +25,7 @@ stream = {}
 
 
 async def is_active_chat(chat_id: int) -> bool:
-    if chat_id not in active:
-        return False
-    else:
-        return True
+    return chat_id in active
 
 
 async def add_active_chat(chat_id: int):
@@ -47,9 +44,7 @@ async def get_active_chats() -> list:
 
 async def is_streaming(chat_id: int) -> bool:
     run = stream.get(chat_id)
-    if not run:
-        return False
-    return run
+    return run or False
 
 
 async def stream_on(chat_id: int):

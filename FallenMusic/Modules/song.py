@@ -40,7 +40,7 @@ async def song(_, message: Message):
         pass
     m = await message.reply_text("💋")
 
-    query = "".join(" " + str(i) for i in message.command[1:])
+    query = "".join(f" {str(i)}" for i in message.command[1:])
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = YoutubeSearch(query, max_results=5).to_dict()

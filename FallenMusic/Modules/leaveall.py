@@ -52,7 +52,6 @@ async def ass_leaveall(_, message: Message):
             await asyncio.sleep(flood_time)
         except Exception:
             continue
-            failed += 1
     try:
         await lear.edit_text(
             f"<u>**» {ASS_MENTION} sᴜᴄᴄᴇssғᴜʟʟʏ ʟᴇғᴛ ᴄʜᴀᴛs :**</u>\n\n**ʟᴇғᴛ :** `{left}`\n**ғᴀɪʟᴇᴅ :** `{failed}`"

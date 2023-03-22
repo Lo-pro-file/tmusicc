@@ -47,11 +47,8 @@ def get_url(message_1: Message) -> Union[str, None]:
                     offset, length = entity.offset, entity.length
                     break
 
-    if offset in (None,):
-        return None
-
-    return text[offset : offset + length]
+    return None if offset in (None,) else text[offset : offset + length]
 
 
 def get_file_name(audio: Union[Audio, Voice]):
-    return f'{audio.file_unique_id}.{audio.file_name.split(".")[-1] if not isinstance(audio, Voice) else "ogg"}'
+    return f'{audio.file_unique_id}.{"ogg" if isinstance(audio, Voice) else audio.file_name.split(".")[-1]}'

@@ -88,7 +88,7 @@ async def fallen_startup():
 
     getme2 = await app2.get_me()
     ASS_ID = getme2.id
-    ASS_NAME = getme2.first_name + " " + (getme2.last_name or "")
+    ASS_NAME = f"{getme2.first_name} " + (getme2.last_name or "")
     ASS_USERNAME = getme2.username
     ASS_MENTION = getme2.mention
     try:
